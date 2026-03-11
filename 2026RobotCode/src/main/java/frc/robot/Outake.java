@@ -13,6 +13,7 @@ import frc.robot.subsystems.Shooter;
 
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
 public class Outake extends Command {
+
   /** Creates a new InTheTrenches. */
   public Outake() {
     // Use addRequirements() here to declare subsystem dependencies.
@@ -22,7 +23,6 @@ public class Outake extends Command {
     IntakePivot.getInstance(),
     Kicker.getInstance()
     );
-    
   }
 
   // Called when the command is initially scheduled.
@@ -33,14 +33,11 @@ public class Outake extends Command {
     //IntakePivot.getInstance().down();
     Shooter.getInstance().stop();
     Kicker.getInstance().outake();
-    
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {
-    
-  }
+  public void execute() { }
 
   // Called once the command ends or is interrupted.
   @Override
@@ -55,4 +52,5 @@ public class Outake extends Command {
   public boolean isFinished() {
     return false;
   }
+  
 }
